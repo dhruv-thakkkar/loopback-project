@@ -15,6 +15,10 @@ export class Company extends Entity {
   })
   name: string;
 
+  @property({
+    type: 'number',
+  })
+  order_id?: number;
 
   constructor(data?: Partial<Company>) {
     super(data);
