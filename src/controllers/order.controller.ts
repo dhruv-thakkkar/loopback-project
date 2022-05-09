@@ -67,7 +67,12 @@ export class OrderController {
   async find(
     @param.filter(Order) filter?: Filter<Order>,
   ): Promise<Order[]> {
-    return this.orderRepository.find({include:['customers']});
+    return this.orderRepository.find({include:[{
+      relation : "customers",
+      scope : {
+        include:['addresses']
+      }
+    }]});
   }
 
   @patch('/orders')
