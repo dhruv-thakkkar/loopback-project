@@ -5,3 +5,5 @@ export * from './customer.controller';
 export * from './order.controller';
 export * from './order-company.controller';
 export * from './company.controller';
+export * from './customer-address.controller';
+export * from './address.controller';

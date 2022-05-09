@@ -72,7 +72,7 @@ export class CustomerController {
       scope:{
         include:['companies']
       }
-    }]});
+    },'addresses']});
   }
 
   @patch('/customers')
