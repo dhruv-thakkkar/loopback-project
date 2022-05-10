@@ -1,4 +1,6 @@
-import {Entity, model, property} from '@loopback/repository';
+import {Entity, model, property, belongsTo} from '@loopback/repository';
+import {Doctor} from './doctor.model';
+import {Patient} from './patient.model';
 
 @model({settings: {strict: false}})
 export class Appointment extends Entity {
@@ -8,16 +10,11 @@ export class Appointment extends Entity {
     generated: true,
   })
   appointment_id?: number;
+  @belongsTo(() => Doctor, {name: 'doctors'})
+  doctor_id: number;
 
-  @property({
-    type: 'number',
-  })
-  doctor_id?: number;
-
-  @property({
-    type: 'number',
-  })
-  patient_id?: number;
+  @belongsTo(() => Patient, {name: 'patients'})
+  patient_id: number;
   // Define well-known properties here
 
   // Indexer property to allow additional data

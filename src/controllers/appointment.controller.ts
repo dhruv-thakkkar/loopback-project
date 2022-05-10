@@ -4,18 +4,12 @@ import {
   Filter,
   FilterExcludingWhere,
   repository,
-  Where,
+  Where
 } from '@loopback/repository';
 import {
-  post,
-  param,
-  get,
-  getModelSchemaRef,
-  patch,
-  put,
-  del,
-  requestBody,
-  response,
+  del, get,
+  getModelSchemaRef, param, patch, post, put, requestBody,
+  response
 } from '@loopback/rest';
 import {Appointment} from '../models';
 import {AppointmentRepository} from '../repositories';
@@ -73,7 +67,7 @@ export class AppointmentController {
   async find(
     @param.filter(Appointment) filter?: Filter<Appointment>,
   ): Promise<Appointment[]> {
-    return this.appointmentRepository.find(filter);
+    return this.appointmentRepository.find({include:['doctors','patients']});
   }
 
   @patch('/appointments')

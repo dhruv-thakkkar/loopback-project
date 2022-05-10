@@ -11,3 +11,5 @@ export * from './doctor-patient.controller';
 export * from './doctor.controller';
 export * from './patient.controller';
 export * from './appointment.controller';
+export * from './appointment-doctor.controller';
+export * from './appointment-patient.controller';
