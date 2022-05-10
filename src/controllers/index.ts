@@ -7,3 +7,7 @@ export * from './order-company.controller';
 export * from './company.controller';
 export * from './customer-address.controller';
 export * from './address.controller';
+export * from './doctor-patient.controller';
+export * from './doctor.controller';
+export * from './patient.controller';
+export * from './appointment.controller';
